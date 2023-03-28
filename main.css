@@ -32,6 +32,33 @@
     background-color: #c7c7c7;
     cursor: pointer;
 }
+/* ========================================= Aside  */
+.imprint {
+    margin: 30px 30px 0 30px;
+    
+}
+
+.imprint div {
+    display: flex;
+    align-items: center;
+}
+
+.imprint-img {
+    height: 30px;
+    padding-right: 10px;
+}
+
+.imprint p {
+    padding: 10px 0;
+    line-height: 25px;
+    margin: 0;
+}
+
+.imprint a {
+    color: black;
+}
+
+
 
 /* ========================================= Aside  */
 #right {
@@ -41,7 +68,12 @@
     width: 30%;
     box-shadow: -11px 5px 8px -1px rgba(0, 0, 0, 0.02);
     overflow-y: scroll;
-    padding-bottom: 30px;
+    padding: 0 10px 30px 20px;
+    
+}
+
+#right::-webkit-scrollbar {
+    display: none;
 }
 
 #cart,
@@ -134,6 +166,7 @@
 #pay-btn {
     font-size: 1.2rem;
     padding: 10px 0;
+    margin-top: 10px;
     color: white;
     border: 1px solid rgb(252, 139, 2);
     background-color: rgb(252, 139, 2);

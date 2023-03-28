@@ -66,7 +66,7 @@ function returnAddedDish(name, content, price) {
             <p class="dish-p">
                 ${content}
             </p>
-            <h3 id="dish-price">${price.toFixed(2)} €</h3>
+            <h3 id="dish-price">${price.toFixed(2).replace('.', ',')} €</h3>
         </div>
         <img src="img/plus.png" id="dish-plus" onclick="pushInNewArray('${name}', '${price}')">
     </div>
@@ -135,7 +135,7 @@ function returnAddedBasket(amount, name, dishSum, price, i) {
         <div class="basket-headline">
             <h5>${amount}</h5>
             <h5>${name}</h5>
-            <p>${dishSum.toFixed(2)} €</p>
+            <p>${dishSum.toFixed(2).replace('.', ',')} €</p>
         </div>
         <div class="basket-portion">
             <p>Anmerkungen hinzufügen</p>
@@ -152,9 +152,9 @@ function returnAddedBasket(amount, name, dishSum, price, i) {
 function showTotalPrice(totalSum) {
     document.getElementById('cart').innerHTML += `
     <div class="calc-sum">
-                    <p>Zwischensumme<span>${totalSum.toFixed(2)} €</span></p>
+                    <p>Zwischensumme<span>${totalSum.toFixed(2).replace('.', ',')} €</span></p>
                     <p class="delivery">Lieferkosten<span>kostenlos</span></p>
-                    <button id="pay-btn">Bezahlen (<span>${totalSum.toFixed(2)} €</span> )</button>
+                    <button id="pay-btn">Bezahlen (<span>${totalSum.toFixed(2).replace('.', ',')} €</span> )</button>
                 </div>
     `;
 }
