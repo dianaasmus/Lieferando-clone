@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miyabi Sushi</title>
+    <link rel="icon" href="img/lieferando.logo.mini.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="addDishes()">
+
+    <header>
+        <div class="header-left">
+            <img src="img/arrow.png" class="header-img">
+            <img src="img/lieferando.logo.png" class="header-logo">
+        </div>
+        <h1>Speisekarte</h1>
+        <img src="img/menu.white.png" class="header-img">
+    </header>
+
+    <main>
+        <div class="left">
+            <div class="restaurant-info">
+                <img src="img/sushi-bg.jpg" id="sushi-bg">
+                <img src="img/MiyabiSushi.png" id="logo-bg">
+
+                <div class="name">
+                    <h2>Miyabi Sushi</h2>
+                    <div class="name-icons">
+                        <img src="img/info.png" id="name-icon" class="info">
+                        <img src="img/heart.png" id="name-icon" class="heart">
+                    </div>
+                </div>
+
+                <div class="rating">
+                    <img src="img/stern.png">
+                    <img src="img/stern.png">
+                    <img src="img/stern.png">
+                    <img src="img/stern.png">
+                    <img src="img/stern2.png">
+                    <p>1,2 k Bewertungen</p>
+                </div>
+
+                <div class="order-info">
+                    <img src="img/uhr.png">
+                    <p>30-55 min</p>
+                    •<img src="img/bike.png" class="point">
+                    <p id="green">Kostenlos</p>
+                    •<img src="img/tasche.png" class="point">
+                    <p>Min. 9,90 €</p>
+                </div>
+
+                <div class="search">
+                    <img src="img/search.png" id="search-icon" onclick="openInput()">
+                    <input type="text" placeholder="Suche nach Gerichten..." id="search-input" class="d-none"
+                        onchange="filterDish()">
+                    <img src="img/close.png" id="close" class="d-none" onclick="closeInput()">
+                    <ul id="options">
+                        <li href="#" class="options">Beliebt </li>
+                        <li href="#" class="options">Poke Bowls </li>
+                        <li href="#" class="options">Premium Rolls</li>
+                        <li href="#" class="options">Nigiri</li>
+                        <li href="#" class="options">Menüs (frittiert)</li>
+                        <li href="#" class="options">Inside Out Rolls</li>
+                        <li href="#" class="options">Vorspeisen </li>
+                        <li href="#" class="options">Suppen </li>
+                        <li href="#" class="options">Extras </li>
+                    </ul>
+                    <!-- <button onclick="horizontalRight()" class="right-btn"></button> -->
+                </div>
+            </div>
+
+            <div id="dishes"></div>
+        </div>
+
+        <div id="right">
+            <h4>Warenkorb</h4>
+            <div id="cart"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="#">Ein Restaurant empfehlen</a>
+            <a href="#">Ein Restaurant anmelden</a>
+            <a href="#">Jobs</a>
+            <a href="#">AGB</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">Impressum</a>
+            <a href="#">Verwendung von Cookies</a>
+            <a href="#">Bug Bounty</a>
+            <a href="#">Ethik-Hotline</a>
+        </div>
+        <div class="footer-details">
+            <p>Diese Seite dient zu Übungszwecken!</p>
+            <p>Icons by icons8.de</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

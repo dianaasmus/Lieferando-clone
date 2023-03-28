@@ -1,0 +1,147 @@
+/* ========================================= Dishes  */
+#dish {
+    margin: 30px 30px 0 30px;
+    padding: 20px;
+    border: 1px solid #c7c7c7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dish-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dish-p {
+    margin-top: 0;
+}
+
+#dish-plus {
+    position: relative;
+    height: 24px;
+    border: 8px solid #e2e2e2;
+    border-radius: 100%;
+    background-color: #e2e2e2;
+    cursor: pointer;
+}
+
+#dish-plus:hover {
+    border: 8px solid #c7c7c7;
+    background-color: #c7c7c7;
+    cursor: pointer;
+}
+
+/* ========================================= Aside  */
+#right {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 30%;
+    box-shadow: -11px 5px 8px -1px rgba(0, 0, 0, 0.02);
+    overflow-y: scroll;
+    padding-bottom: 30px;
+}
+
+#cart,
+#cart2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#right h4 {
+    margin-top: 55px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.cart-bag {
+    padding: 40px 0 15px 0;
+}
+
+#cart2 h4 {
+    margin: 0;
+}
+
+#cart2 p {
+    text-align: center;
+}
+
+/* ========================================= Aside Basket */
+
+#addedBasket {
+    width: 80%;
+}
+
+.basket-headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.basket-headline h5 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.basket-portion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.basket-portion p {
+    text-decoration: underline;
+    color: #c7c7c7;
+}
+
+.basket-portion p:hover {
+    text-decoration: none;
+}
+
+.basket-img {
+    height: 15px;
+    margin-left: 10px;
+    background-color: #e2e2e2;
+    border: 4px solid #e2e2e2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.basket-img:hover {
+    background-color: #c7c7c7;
+    border: 4px solid #c7c7c7;
+}
+
+.calc-sum {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-sum p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery span {
+    color: #008300;
+}
+
+#pay-btn {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    color: white;
+    border: 1px solid rgb(252, 139, 2);
+    background-color: rgb(252, 139, 2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#pay-btn:hover {
+    border: 1px solid #ef5c01d6;
+    background-color: #ef5c01d6;
+}

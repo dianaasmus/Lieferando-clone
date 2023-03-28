@@ -1,0 +1,278 @@
+/* ========================================= General + header  */
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: rgb(252, 139, 2);
+    box-shadow: 0px 13px 13px 0px rgba(0, 0, 0, 0.22);
+    z-index: 999;
+}
+
+.header-img {
+    height: 30px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.header-logo {
+    position: absolute;
+    top: 19px;
+    left: 50px;
+    height: 58px;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 25px;
+    color: white;
+}
+
+/* ========================================= Main  */
+main {
+    display: flex;
+}
+
+.left {
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+#sushi-bg {
+    width: 100%;
+    height: 500px;
+}
+
+#logo-bg {
+    position: relative;
+    top: -70px;
+    left: 50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0px 17px 8px -3px rgba(0, 0, 0, 0.14);
+}
+
+.restaurant-info {
+    box-shadow: 0px 13px 13px 0px rgba(0, 0, 0, 0.02);
+    padding-bottom: 20px;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    margin: -50px 0 0 50px;
+}
+
+.name-icons {
+    margin: -60px 20px 0 0;
+}
+
+#name-icon {
+    border: 10px solid #e2e2e2;
+    border-radius: 50%;
+    background-color: #e2e2e2;
+    cursor: pointer;
+}
+
+#name-icon:hover {
+    border: 10px solid #c7c7c7;
+    background-color: #c7c7c7;
+}
+
+.info {
+    margin-right: 20px;
+}
+
+.heart {
+    margin-right: 30px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 50px;
+}
+
+.rating p {
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #9a9a9a;
+}
+
+.rating p:hover {
+    text-decoration: none;
+}
+
+.order-info {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 50px;
+}
+
+.order-info p {
+    color: #9a9a9a;
+    padding-right: 10px;
+}
+
+.order-info img {
+    padding-right: 10px;
+}
+
+#green {
+    color: #008300;
+}
+
+.point {
+    padding-left: 10px;
+}
+
+.search {
+    margin: 15px -30px 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+#search-icon {
+    position: absolute;
+    left: 42px;
+    background-color: #e2e2e2;
+    border-radius: 100%;
+    border: 8px solid #e2e2e2;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#search-icon:hover {
+    margin-right: 10px;
+    background-color: #c7c7c7;
+    border-radius: 100%;
+    border: 8px solid #c7c7c7;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.search input {
+    position: relative;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding-left: 74px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+#close {
+    position: relative;
+    top: 0;
+    right: 80px;
+    z-index: 999;
+    background-color: #e2e2e2;
+    border-radius: 100%;
+    border: 8px solid #e2e2e2;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#close:hover {
+    background-color: #c7c7c7;
+    border-radius: 100%;
+    border: 8px solid #c7c7c7;
+}
+
+#options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 65px 0 30px;
+    height: 53px;
+    width: 90%;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+#options::-webkit-scrollbar {
+    display: none;
+}
+
+#options li {
+    list-style: none;
+    color: #9a9a9a;
+    margin: 0 10px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+#options li:hover {
+    color: #1c191c;
+    background-color: #e2e2e2;
+    border-radius: 15px;
+}
+
+.options:focus {
+    color: white;
+    background-color: #393939;
+    border-radius: 15px;
+}
+
+/* ========================================= Footer */
+footer {
+    height: 150px;
+    background-color: #f0edea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.links {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-details {
+    padding-top: 20px;
+}
+
+footer p {
+    color: rgb(71, 71, 71);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p:nth-child(2) {
+    margin-bottom: 0;
+}
