@@ -53,6 +53,7 @@ function addDishes() {
         dishDiv.innerHTML += returnAddedDish(name, content, price);
     }
     addEmptyBasket();
+    
 }
 
 function returnAddedDish(name, content, price) {
@@ -61,7 +62,7 @@ function returnAddedDish(name, content, price) {
         <div>
             <div class="dish-name">
                 <h3 id="dish-name">${name}</h3>
-                <img src="img/info.png">
+                <img src="img/info.png" class="info">
             </div>
             <p class="dish-p">
                 ${content}
@@ -90,6 +91,7 @@ function pushInNewArray(name, price) {
     }
 
     showAddedBasket();
+    
 }
 
 function savePushElements() {
@@ -105,10 +107,14 @@ function savePushElements() {
 
 // =========================================================== show Basket with added Dishes
 function showAddedBasket() {
+    let rightContainer = document.getElementById('right');
+    let responsiveContainer = document.getElementById('responsiveBasket');
+    // const rightContainerDisplay = getComputedStyle(rightContainer).getPropertyValue('display');
     let basket = document.getElementById('cart');
     basket.innerHTML = '';
     let dishSum = 0;
     let totalSum = 0;
+
 
     if (shoppingBasket.length >= 0) {
         for (let i = 0; i < shoppingBasket.length; i++) {
@@ -119,12 +125,17 @@ function showAddedBasket() {
             const price = prices[i];
             const amount = amounts[i];
 
-            basket.innerHTML += returnAddedBasket(amount, name, dishSum, price, i);
+            if (responsiveContainer.classList.contains('responsive-basket')) {
+                responsiveContainer.innerHTML = returnAddedBasket(amount, name, dishSum, price, i);
+            } else {
+                basket.innerHTML += returnAddedBasket(amount, name, dishSum, price, i);
+            }
         }
     } else {
         addEmptyBasket();
     }
     showTotalPrice(totalSum);
+    addResponsiveButton(totalSum);
 }
 
 
@@ -157,6 +168,22 @@ function showTotalPrice(totalSum) {
                     <button id="pay-btn">Bezahlen (<span>${totalSum.toFixed(2).replace('.', ',')} €</span> )</button>
                 </div>
     `;
+}
+
+function addResponsiveButton(totalSum) {
+    let responsiveBasket = document.getElementById('responsiveBasket');
+    responsiveBasket.innerHTML = `
+    <div class="responsive-btn">
+        <button id="responsive-pay-btn" onclick="openResponsiveBasket()">Bezahlen (<span>${totalSum.toFixed(2).replace('.', ',')} €</span> )</button>
+    </div>
+    `;
+    
+}
+
+function openResponsiveBasket() {
+    let responsiveContainer = document.getElementById('responsiveBasket');
+    responsiveContainer.classList.add('responsive-basket');
+    showAddedBasket();
 }
 
 

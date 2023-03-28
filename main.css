@@ -14,7 +14,16 @@
     gap: 10px;
 }
 
+h3 {
+    font-size: 1rem;
+}
+
+.info {
+    cursor: pointer;
+}
+
 .dish-p {
+    font-size: 0.9rem;
     margin-top: 0;
 }
 
@@ -32,10 +41,55 @@
     background-color: #c7c7c7;
     cursor: pointer;
 }
-/* ========================================= Aside  */
+
+/* ========================================= Footer */
+footer {
+    height: 150px;
+    background-color: #f0edea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.links {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-details {
+    padding-top: 20px;
+}
+
+footer p {
+    color: rgb(71, 71, 71);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p:nth-child(2) {
+    margin-bottom: 0;
+}
+
+/* ========================================= Imprint  */
 .imprint {
-    margin: 30px 30px 0 30px;
-    
+    margin: 30px;
+
 }
 
 .imprint div {
@@ -60,7 +114,7 @@
 
 
 
-/* ========================================= Aside  */
+/* ========================================= Right Side  */
 #right {
     position: sticky;
     top: 0;
@@ -69,7 +123,7 @@
     box-shadow: -11px 5px 8px -1px rgba(0, 0, 0, 0.02);
     overflow-y: scroll;
     padding: 0 10px 30px 20px;
-    
+
 }
 
 #right::-webkit-scrollbar {
@@ -86,7 +140,7 @@
 #right h4 {
     margin-top: 55px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .cart-bag {
@@ -94,15 +148,16 @@
 }
 
 #cart2 h4 {
+    font-size: 1.3rem;
     margin: 0;
 }
 
 #cart2 p {
+    font-size: 1rem;
     text-align: center;
 }
 
-/* ========================================= Aside Basket */
-
+/* ========================================= Right Side Basket */
 #addedBasket {
     width: 80%;
 }
@@ -177,4 +232,82 @@
 #pay-btn:hover {
     border: 1px solid #ef5c01d6;
     background-color: #ef5c01d6;
+}
+
+#responsiveBasket {
+    display: none;
+}
+
+.responsive-basket {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    z-index: 1000;
+}
+
+.responsive-btn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f8f8f8;
+    border-top: 1px solid #f0edea;
+}
+
+#responsive-pay-btn {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 20px;
+    color: white;
+    border: 1px solid rgb(252, 139, 2);
+    background-color: rgb(252, 139, 2);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 90%;
+    z-index: 999;
+}
+
+#responsive-pay-btn:hover {
+    border: 1px solid #ef5c01d6;
+    background-color: #ef5c01d6;
+}
+
+/* ========================================= Responsive */
+@media (max-width: 1000px) {
+    #right {
+        display: none;
+    }
+
+    .left {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search {
+        margin: 15px 0px 0 30px;
+    }
+
+    #responsiveBasket {
+        display: unset;
+    }
+
+    .responsive-container {
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 80px;
+        z-index: 1000;
+    }
+
+    footer {
+        margin-bottom: 83px;
+    }
 }
