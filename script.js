@@ -118,12 +118,6 @@ function showAddedBasket() {
             const price = prices[i];
             const amount = amounts[i];
 
-            // if (window.matchMedia("(max-width: 1000px)").matches) {
-            //     addResponsiveButton();
-            //     let basket = document.getElementById('cart');
-            //     basket.innerHTML += returnAddedBasket(amount, name, dishSum, price, i);
-            // }
-            // removeResponsiveButton();
             basket.innerHTML += returnAddedBasket(amount, name, dishSum, price, i);
         }
     } else {
@@ -165,22 +159,6 @@ function showTotalPrice(totalSum) {
 }
 
 // =========================================================== Responsive Basket / Button
-function addResponsiveButton() {
-    // let responsiveButton = document.getElementById('responsive-pay-btn');
-    // if (responsiveButton.classList = 'd-none') {
-    //     responsiveButton.classList.remove('d-none');
-    // } else {
-    // document.getElementById('body').innerHTML += `
-    // <div class="responsive-btn" id="responsive-pay-div">
-    //     <button id="responsive-pay-btn" onclick="openResponsiveBasket()">Zum Warenkorb</button>
-    // </div>
-    // `;
-    // document.getElementById('responsive-pay-btn').classList.remove('d-none');
-    // document.getElementById('footer').classList.add('margin');
-    // showAddedBasket();
-    // }
-}
-
 function openResponsiveBasket() {
     document.getElementById('right').classList.remove('dis-none');
     document.getElementById('close-basket').classList.remove('d-none');
@@ -192,10 +170,6 @@ function closeResponsiveBasket() {
     document.getElementById('close-basket').classList.add('d-none');
     document.getElementById('body').classList.remove('scrollbar');
 }
-
-// function removeResponsiveButton(){
-//     document.getElementById('responsive-pay-btn').classList.add('d-none');
-// }
 
 // =========================================================== show empty Basket, if a dish has been deleted
 function addEmptyBasket() {
@@ -209,7 +183,6 @@ function addEmptyBasket() {
     </div>
     `;
 }
-
 
 // =========================================================== decrease dishes || remove Basket 
 function deleteDish(position) {
@@ -231,7 +204,6 @@ function deleteDish(position) {
     }
 }
 
-
 // =========================================================== increase number of dishes
 function addDish(position) {
 
@@ -239,7 +211,6 @@ function addDish(position) {
     showAddedBasket();
     openResponsiveBasket();
 }
-
 
 // =========================================================== search
 function getInputfromMenu() {
@@ -270,7 +241,6 @@ function filterDish() {
     }
 
 }
-
 
 // =========================================================== display search input 
 function openInput() {
