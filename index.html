@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miyabi Sushi</title>
     <link rel="icon" href="img/lieferando.logo.mini.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="responsive.css">
     <script src="script.js"></script>
 </head>
 
-<body onload="addDishes()">
+<body id="body" onload="addDishes()">
 
     <header>
         <div class="header-left">
@@ -93,16 +94,14 @@
             </div>
         </div>
 
-        <div id="responsiveBasket">
-        </div>
-
-        <div id="right">
+        <div id="right" class="dis-none">
+            <img src="img/close.basket.png" id="close-basket" class="d-none" onclick="closeResponsiveBasket()">
             <h4>Warenkorb</h4>
             <div id="cart"></div>
         </div>
     </main>
 
-    <footer>
+    <footer id="footer">
         <div class="links">
             <a href="#">Ein Restaurant empfehlen</a>
             <a href="#">Ein Restaurant anmelden</a>
@@ -120,6 +119,10 @@
         </div>
 
     </footer>
+
+    <div class="responsive-btn" id="responsive-pay-div">
+        <button id="responsive-pay-btn" onclick="openResponsiveBasket()">Zum Warenkorb</button>
+    </div>
 </body>
 
 </html>

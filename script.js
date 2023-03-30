@@ -1,12 +1,12 @@
 let dishes = [
     {
-        "name": "Mini Funa Roll Menü (18 Stück)",
-        "content": "je 6 Mini Funa Roll Mozzarella, Garnele und Lachs",
+        "name": "Mini Funa Roll Menü",
+        "content": "18 Stück: je 6 Mini Funa Roll Mozzarella, Garnele und Lachs",
         "price": 13.90
     },
     {
-        "name": "Lachs Menü (18 Stück)",
-        "content": "je 6 Sake Maki, Sake Nigiri und Sake Avocado",
+        "name": "Lachs Menü",
+        "content": "18 Stück: je 6 Sake Maki, Sake Nigiri und Sake Avocado",
         "price": 13.90
     },
     {
@@ -53,7 +53,6 @@ function addDishes() {
         dishDiv.innerHTML += returnAddedDish(name, content, price);
     }
     addEmptyBasket();
-    
 }
 
 function returnAddedDish(name, content, price) {
@@ -89,9 +88,7 @@ function pushInNewArray(name, price) {
     } else {
         amounts[menu]++;
     }
-
     showAddedBasket();
-    
 }
 
 function savePushElements() {
@@ -107,14 +104,10 @@ function savePushElements() {
 
 // =========================================================== show Basket with added Dishes
 function showAddedBasket() {
-    let rightContainer = document.getElementById('right');
-    let responsiveContainer = document.getElementById('responsiveBasket');
-    // const rightContainerDisplay = getComputedStyle(rightContainer).getPropertyValue('display');
     let basket = document.getElementById('cart');
-    basket.innerHTML = '';
     let dishSum = 0;
     let totalSum = 0;
-
+    basket.innerHTML = '';
 
     if (shoppingBasket.length >= 0) {
         for (let i = 0; i < shoppingBasket.length; i++) {
@@ -125,17 +118,18 @@ function showAddedBasket() {
             const price = prices[i];
             const amount = amounts[i];
 
-            if (responsiveContainer.classList.contains('responsive-basket')) {
-                responsiveContainer.innerHTML = returnAddedBasket(amount, name, dishSum, price, i);
-            } else {
-                basket.innerHTML += returnAddedBasket(amount, name, dishSum, price, i);
-            }
+            // if (window.matchMedia("(max-width: 1000px)").matches) {
+            //     addResponsiveButton();
+            //     let basket = document.getElementById('cart');
+            //     basket.innerHTML += returnAddedBasket(amount, name, dishSum, price, i);
+            // }
+            // removeResponsiveButton();
+            basket.innerHTML += returnAddedBasket(amount, name, dishSum, price, i);
         }
     } else {
         addEmptyBasket();
     }
-    showTotalPrice(totalSum);
-    addResponsiveButton(totalSum);
+    document.getElementById('cart').innerHTML += showTotalPrice(totalSum);
 }
 
 
@@ -144,7 +138,7 @@ function returnAddedBasket(amount, name, dishSum, price, i) {
     <div id="addedBasket">
     <div>
         <div class="basket-headline">
-            <h5>${amount}</h5>
+            <h5 class="amounts-padding">${amount}</h5>
             <h5>${name}</h5>
             <p>${dishSum.toFixed(2).replace('.', ',')} €</p>
         </div>
@@ -161,7 +155,7 @@ function returnAddedBasket(amount, name, dishSum, price, i) {
 
 
 function showTotalPrice(totalSum) {
-    document.getElementById('cart').innerHTML += `
+    return `
     <div class="calc-sum">
                     <p>Zwischensumme<span>${totalSum.toFixed(2).replace('.', ',')} €</span></p>
                     <p class="delivery">Lieferkosten<span>kostenlos</span></p>
@@ -170,22 +164,38 @@ function showTotalPrice(totalSum) {
     `;
 }
 
-function addResponsiveButton(totalSum) {
-    let responsiveBasket = document.getElementById('responsiveBasket');
-    responsiveBasket.innerHTML = `
-    <div class="responsive-btn">
-        <button id="responsive-pay-btn" onclick="openResponsiveBasket()">Bezahlen (<span>${totalSum.toFixed(2).replace('.', ',')} €</span> )</button>
-    </div>
-    `;
-    
+// =========================================================== Responsive Basket / Button
+function addResponsiveButton() {
+    // let responsiveButton = document.getElementById('responsive-pay-btn');
+    // if (responsiveButton.classList = 'd-none') {
+    //     responsiveButton.classList.remove('d-none');
+    // } else {
+    // document.getElementById('body').innerHTML += `
+    // <div class="responsive-btn" id="responsive-pay-div">
+    //     <button id="responsive-pay-btn" onclick="openResponsiveBasket()">Zum Warenkorb</button>
+    // </div>
+    // `;
+    // document.getElementById('responsive-pay-btn').classList.remove('d-none');
+    // document.getElementById('footer').classList.add('margin');
+    // showAddedBasket();
+    // }
 }
 
 function openResponsiveBasket() {
-    let responsiveContainer = document.getElementById('responsiveBasket');
-    responsiveContainer.classList.add('responsive-basket');
-    showAddedBasket();
+    document.getElementById('right').classList.remove('dis-none');
+    document.getElementById('close-basket').classList.remove('d-none');
+    document.getElementById('body').classList.add('scrollbar');
 }
 
+function closeResponsiveBasket() {
+    document.getElementById('right').classList.add('dis-none');
+    document.getElementById('close-basket').classList.add('d-none');
+    document.getElementById('body').classList.remove('scrollbar');
+}
+
+// function removeResponsiveButton(){
+//     document.getElementById('responsive-pay-btn').classList.add('d-none');
+// }
 
 // =========================================================== show empty Basket, if a dish has been deleted
 function addEmptyBasket() {
@@ -213,8 +223,11 @@ function deleteDish(position) {
     }
     if (shoppingBasket.length == 0) {
         addEmptyBasket();
+        document.getElementById('responsive-pay-div').classList.add('d-none');
+        document.getElementById('footer').classList.remove('margin');
     } else {
         showAddedBasket();
+        openResponsiveBasket();
     }
 }
 
@@ -224,6 +237,7 @@ function addDish(position) {
 
     amounts[position]++;
     showAddedBasket();
+    openResponsiveBasket();
 }
 
 
@@ -239,7 +253,7 @@ function getInputfromMenu() {
 function filterDish() {
     let searchInput = getInputfromMenu();
     search = searchInput.toLowerCase();
-    
+
     // console.log(search);
     let dishDiv = document.getElementById('dishes');
     dishDiv.innerHTML = '';
@@ -251,10 +265,10 @@ function filterDish() {
         let price = dishJSON['price'];
 
         if (name.toLowerCase().includes(search)) {
-        dishDiv.innerHTML += returnAddedDish(name, content, price);
-        } 
+            dishDiv.innerHTML += returnAddedDish(name, content, price);
+        }
     }
-    
+
 }
 
 
